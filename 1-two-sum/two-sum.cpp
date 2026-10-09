@@ -2,20 +2,18 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
     {
-        unordered_map<int,int>umap;
-
+        unordered_map<int,int>umap; // num to index mapping
+        
         for(int i=0;i<nums.size();i++)
         {
-            int new_target = target - nums[i];
-            if(umap.find(new_target) == umap.end())
+            int newTarget = target - nums[i];
+            
+            if(umap.find(newTarget)!=umap.end())
             {
-                umap[nums[i]] = i;
+                return {umap[newTarget],i};
             }
-            else
-            {
-                return {umap[new_target],i};
-            }
+            umap[nums[i]] = i;
         }
-        return {-1,-1};
+        return {}; 
     }
 };
