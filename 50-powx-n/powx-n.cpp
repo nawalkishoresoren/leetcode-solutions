@@ -1,6 +1,6 @@
 class Solution {
 public:
-    double power(double x, long long n)      // n >= 0, your exact recursion
+    double power(double x, long long n)
     {
         if (n == 0) return 1;
         if (n == 1) return x;
